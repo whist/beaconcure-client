@@ -1,0 +1,13 @@
+services:
+  proxy:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - beaconcure
+networks:
+  beaconcure:
+    driver: bridge
